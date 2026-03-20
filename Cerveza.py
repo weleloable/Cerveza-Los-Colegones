@@ -4,7 +4,8 @@ import time
 import base64
 import json
 import os
-from streamlit_autorefresh import st_autorefresh
+import st_autorefresh
+#from streamlit_autorefresh import st_autorefresh
 
 # ==========================================
 # 1. CONFIGURACIÓN Y ESTILOS
