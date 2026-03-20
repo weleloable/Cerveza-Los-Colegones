@@ -1,0 +1,79 @@
+{
+    "IPA": [
+        {
+            "paso": "Calentamiento",
+            "objetivo": "79\u00b0C",
+            "instruccion": "Calentar 15L de agua."
+        },
+        {
+            "paso": "Pesado de Grano",
+            "objetivo": "4.75 kg total",
+            "instruccion": "Pesa los granos con precisi\u00f3n:",
+            "granos": [{"nombre": "Malta Pale Ale", "cantidad": "4.5 kg"}, {"nombre": "Malta Caramel", "cantidad": "0.25 kg"}]
+        },
+        {
+            "paso": "Macerado", 
+            "objetivo": "65\u00b0C / 60 min",
+            "instruccion": "A\u00f1adir Malta. Esperar 60 min.",
+            "tiempo_min": "60"
+        },
+        {
+            "paso": "Lavado del grano",
+            "objetivo": "15 min - 8L agua",
+            "instruccion": "Recircular mosto y a\u00f1adir agua a 80\u00baC",
+            "tiempo_min": "15"
+        },
+        {
+            "paso": "Pesado de L\u00fapulo",
+            "objetivo": "Cascade y Citra",
+            "instruccion": "Pesa los l\u00fapulos con precisi\u00f3n:",
+            "granos": [{"nombre": "Lupulo Cascade 1", "cantidad": "25 g"}, 
+                        {"nombre": "Lupulo Cascade 2", "cantidad": "12 g"}, 
+                        {"nombre": "Lupulo Citra", "cantidad": "20 g"}]
+        },
+        {
+            "paso": "Ebullici\u00f3n",
+            "objetivo": "96\u00b0C / 10 min",
+            "instruccion": "Llevar a ebullici\u00f3n el mosto",
+            "tiempo_min": "10"
+        },
+        {
+            "paso": "Hervido",
+            "objetivo": "96\u00b0C / 60 min",
+            "instruccion": "Adiciones de l\u00fapulo programadas.",
+            "tiempo_min": "60",
+            "hitos": [{"minuto": "60", "nombre": "L\u00fapulo Amargor - Cascade 25g (Inicio)"}, 
+                        {"minuto": "10", "nombre": "L\u00fapulo Sabor - Cascade 12g (Quedan 10 min)"}, 
+                        {"minuto": "5", "nombre": "L\u00fapulo Aroma - Citra 20g (Quedan 5 min)"}]
+        },
+        {
+            "paso": "Enfriamiento",
+            "objetivo": "28\u00b0C",
+            "instruccion": "Enfriar el mosto por debajo de 30\u00baC"
+        },
+        {
+            "paso": "Whirpool",
+            "objetivo": "Hacer whirpool",
+            "instruccion": "Crear un remolino vigoroso",
+            "tiempo_min": "2"
+        },
+        {
+            "paso": "Fermentar",
+            "objetivo": "Fermentado",
+            "instruccion": "A\u00f1adir levadura SafAle US-05"
+        }
+    ],
+    "LAGER": [
+        {
+            "paso": "Calentamiento",
+            "objetivo": "78\u00b0C",
+            "instruccion": "Calentar 12L de agua."
+        },
+        {
+            "paso": "Macerado",
+            "objetivo": "67\u00b0C / 60 min",
+            "instruccion": "Mantener temperatura constante.",
+            "tiempo_min": 60.0
+        }
+    ]
+}
