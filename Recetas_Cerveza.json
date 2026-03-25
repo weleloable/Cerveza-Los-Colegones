@@ -180,5 +180,24 @@
             "objetivo": "Fermentado",
             "instruccion": "Añadir levadura SalfLager W-34/70"
         }
+    ],
+    "Vermú": [
+        {
+            "paso": "Inicio",
+            "objetivo": "213123",
+            "instruccion": "...12321",
+            "tiempo_min": "3"
+        },
+        {
+            "paso": "Nuevo",
+            "objetivo": "23142",
+            "instruccion": "12432523",
+            "granos": [
+                {
+                    "nombre": "123",
+                    "cantidad": "5432"
+                }
+            ]
+        }
     ]
 }
