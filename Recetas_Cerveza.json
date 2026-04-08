@@ -197,7 +197,6 @@
             "paso": "Notas herbales",
             "objetivo": "Dar notas herbales",
             "instruccion": "Añadir las hierbas para aromatizar. Un vez realizado, remover durante 30 segundos.",
-            "tiempo_min": "1",
             "granos": [
                 {
                     "nombre": "Ajenjo",
@@ -210,6 +209,10 @@
                 {
                     "nombre": "Flor de Sauco",
                     "cantidad": "1 g"
+                },
+                {
+                    "nombre": "Remover",
+                    "cantidad": "30 sec"
                 }
             ]
         },
@@ -217,7 +220,6 @@
             "paso": "Notas florales",
             "objetivo": "Añadir notas florales y remover",
             "instruccion": "Añadir hierbas y remover durante 30 segundos",
-            "tiempo_min": "1",
             "granos": [
                 {
                     "nombre": "Menta",
@@ -230,6 +232,10 @@
                 {
                     "nombre": "Raiz de Genciana",
                     "cantidad": "1 g"
+                },
+                {
+                    "nombre": "Remover",
+                    "cantidad": "30 sec"
                 }
             ]
         },
@@ -237,7 +243,6 @@
             "paso": "Notas de olor",
             "objetivo": "Añadir notas de olor y remover",
             "instruccion": "Añadir hierbas y remover durante 30 segundos",
-            "tiempo_min": "1",
             "granos": [
                 {
                     "nombre": "Cardamomo (machacado)",
@@ -258,6 +263,10 @@
                 {
                     "nombre": "Nuez moscada (rallada)",
                     "cantidad": "media"
+                },
+                {
+                    "nombre": "Remover",
+                    "cantidad": "30 sec"
                 }
             ]
         },
@@ -265,7 +274,6 @@
             "paso": "Alcoholazo 2",
             "objetivo": "300ml de alcoholazo y pieles de fruta",
             "instruccion": "Vodka, ginebra o alcoholazo puro",
-            "tiempo_min": "1",
             "granos": [
                 {
                     "nombre": "Alcoholazo",
@@ -278,6 +286,10 @@
                 {
                     "nombre": "Limon",
                     "cantidad": "2 pieles"
+                },
+                {
+                    "nombre": "Remover",
+                    "cantidad": "30 sec"
                 }
             ]
         },
@@ -285,7 +297,6 @@
             "paso": "Vino",
             "objetivo": "Añadir vino blanco y tinto",
             "instruccion": "Añadir vino y despues remover",
-            "tiempo_min": "1",
             "granos": [
                 {
                     "nombre": "Vino blanco",
@@ -294,6 +305,10 @@
                 {
                     "nombre": "Vino tinto",
                     "cantidad": "0,75 l"
+                },
+                {
+                    "nombre": "Remover",
+                    "cantidad": "30 sec"
                 }
             ]
         }

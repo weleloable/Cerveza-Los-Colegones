@@ -1,0 +1,301 @@
+{
+    "IPA": [
+        {
+            "paso": "Calentamiento",
+            "objetivo": "79°C",
+            "instruccion": "Calentar 15L de agua."
+        },
+        {
+            "paso": "Pesado de Grano",
+            "objetivo": "4.75 kg total",
+            "instruccion": "Pesa los granos con precisión:",
+            "granos": [
+                {
+                    "nombre": "Malta Pale Ale",
+                    "cantidad": "4.5 kg"
+                },
+                {
+                    "nombre": "Malta Caramel",
+                    "cantidad": "0.25 kg"
+                }
+            ]
+        },
+        {
+            "paso": "Macerado",
+            "objetivo": "65°C / 60 min",
+            "instruccion": "Añadir Malta. Esperar 60 min.",
+            "tiempo_min": "60"
+        },
+        {
+            "paso": "Lavado del grano",
+            "objetivo": "15 min - 8L agua",
+            "instruccion": "Recircular mosto y añadir agua a 80ºC",
+            "tiempo_min": "15"
+        },
+        {
+            "paso": "Pesado de Lúpulo",
+            "objetivo": "Cascade y Citra",
+            "instruccion": "Pesa los lúpulos con precisión:",
+            "granos": [
+                {
+                    "nombre": "Lupulo Cascade 1",
+                    "cantidad": "25 g"
+                },
+                {
+                    "nombre": "Lupulo Cascade 2",
+                    "cantidad": "12 g"
+                },
+                {
+                    "nombre": "Lupulo Citra",
+                    "cantidad": "20 g"
+                }
+            ]
+        },
+        {
+            "paso": "Ebullición",
+            "objetivo": "96°C / 10 min",
+            "instruccion": "Llevar a ebullición el mosto",
+            "tiempo_min": "10"
+        },
+        {
+            "paso": "Hervido",
+            "objetivo": "96°C / 60 min",
+            "instruccion": "Adiciones de lúpulo programadas.",
+            "tiempo_min": "60",
+            "hitos": [
+                {
+                    "minuto": "60",
+                    "nombre": "Lúpulo Amargor - Cascade 25g (Inicio)"
+                },
+                {
+                    "minuto": "10",
+                    "nombre": "Lúpulo Sabor - Cascade 12g (Quedan 10 min)"
+                },
+                {
+                    "minuto": "5",
+                    "nombre": "Lúpulo Aroma - Citra 20g (Quedan 5 min)"
+                }
+            ]
+        },
+        {
+            "paso": "Enfriamiento",
+            "objetivo": "28°C",
+            "instruccion": "Enfriar el mosto por debajo de 30ºC"
+        },
+        {
+            "paso": "Whirpool",
+            "objetivo": "Hacer whirpool",
+            "instruccion": "Crear un remolino vigoroso",
+            "tiempo_min": "2"
+        },
+        {
+            "paso": "Fermentar",
+            "objetivo": "Fermentado",
+            "instruccion": "Añadir levadura SafAle US-05"
+        }
+    ],
+    "LAGER": [
+        {
+            "paso": "Calentamiento",
+            "objetivo": "79°C",
+            "instruccion": "Calentar 15L de agua."
+        },
+        {
+            "paso": "Pesado de Grano",
+            "objetivo": "4.75 kg total",
+            "instruccion": "Pesa los granos con precisión:",
+            "granos": [
+                {
+                    "nombre": "Malta Pilsner",
+                    "cantidad": "4.5 kg"
+                },
+                {
+                    "nombre": "Malta CaraHel (que no caramel)",
+                    "cantidad": "0.25 kg"
+                }
+            ]
+        },
+        {
+            "paso": "Macerado",
+            "objetivo": "66°C / 60 min",
+            "instruccion": "Añadir Malta. Esperar 60 min.",
+            "tiempo_min": "60"
+        },
+        {
+            "paso": "Lavado del grano",
+            "objetivo": "15 min - 8L agua - 78ºC",
+            "instruccion": "Recircular mosto y añadir agua a 78ºC",
+            "tiempo_min": "15"
+        },
+        {
+            "paso": "Pesado de Lúpulo",
+            "objetivo": "Hitlerbraum Blanc",
+            "instruccion": "Pesa los lúpulos con precisión:",
+            "granos": [
+                {
+                    "nombre": "Lupulo HB 1",
+                    "cantidad": "20 g"
+                },
+                {
+                    "nombre": "Lupulo HB 2",
+                    "cantidad": "10 g"
+                }
+            ]
+        },
+        {
+            "paso": "Ebullición",
+            "objetivo": "96°C / 10 min",
+            "instruccion": "Llevar a ebullición el mosto",
+            "tiempo_min": "10"
+        },
+        {
+            "paso": "Hervido",
+            "objetivo": "96°C / 60 min",
+            "instruccion": "Adiciones de lúpulo programadas.",
+            "tiempo_min": "60",
+            "hitos": [
+                {
+                    "minuto": "60",
+                    "nombre": "Lúpulo Amargor - HB 1 20g (Inicio)"
+                },
+                {
+                    "minuto": "10",
+                    "nombre": "Lúpulo Sabor - HB 2 10g (Quedan 40 min)"
+                }
+            ]
+        },
+        {
+            "paso": "Enfriamiento",
+            "objetivo": "28°C",
+            "instruccion": "Enfriar el mosto por debajo de 30ºC"
+        },
+        {
+            "paso": "Whirpool",
+            "objetivo": "Hacer whirpool",
+            "instruccion": "Crear un remolino vigoroso",
+            "tiempo_min": "2"
+        },
+        {
+            "paso": "Fermentar",
+            "objetivo": "Fermentado",
+            "instruccion": "Añadir levadura SalfLager W-34/70"
+        }
+    ],
+    "Vermú": [
+        {
+            "paso": "Alcoholazo",
+            "objetivo": "300 ml Alcoholazo",
+            "instruccion": "300ml de ginebra, vodka o alcohol puro 96º",
+            "granos": [
+                {
+                    "nombre": "Alcoholazo",
+                    "cantidad": "300 ml"
+                }
+            ]
+        },
+        {
+            "paso": "Notas herbales",
+            "objetivo": "Dar notas herbales",
+            "instruccion": "Añadir las hierbas para aromatizar. Un vez realizado, remover durante 30 segundos.",
+            "tiempo_min": "1",
+            "granos": [
+                {
+                    "nombre": "Ajenjo",
+                    "cantidad": "3 g"
+                },
+                {
+                    "nombre": "Manzanilla",
+                    "cantidad": "1 g"
+                },
+                {
+                    "nombre": "Flor de Sauco",
+                    "cantidad": "1 g"
+                }
+            ]
+        },
+        {
+            "paso": "Notas florales",
+            "objetivo": "Añadir notas florales y remover",
+            "instruccion": "Añadir hierbas y remover durante 30 segundos",
+            "tiempo_min": "1",
+            "granos": [
+                {
+                    "nombre": "Menta",
+                    "cantidad": "1 g"
+                },
+                {
+                    "nombre": "Oregano",
+                    "cantidad": "2 g"
+                },
+                {
+                    "nombre": "Raiz de Genciana",
+                    "cantidad": "1 g"
+                }
+            ]
+        },
+        {
+            "paso": "Notas de olor",
+            "objetivo": "Añadir notas de olor y remover",
+            "instruccion": "Añadir hierbas y remover durante 30 segundos",
+            "tiempo_min": "1",
+            "granos": [
+                {
+                    "nombre": "Cardamomo (machacado)",
+                    "cantidad": "1 g"
+                },
+                {
+                    "nombre": "Enebro (machacado)",
+                    "cantidad": "1 g"
+                },
+                {
+                    "nombre": "Canela",
+                    "cantidad": "1 rama"
+                },
+                {
+                    "nombre": "Clavo",
+                    "cantidad": "4 clavos"
+                },
+                {
+                    "nombre": "Nuez moscada (rallada)",
+                    "cantidad": "media"
+                }
+            ]
+        },
+        {
+            "paso": "Alcoholazo 2",
+            "objetivo": "300ml de alcoholazo y pieles de fruta",
+            "instruccion": "Vodka, ginebra o alcoholazo puro",
+            "tiempo_min": "1",
+            "granos": [
+                {
+                    "nombre": "Alcoholazo",
+                    "cantidad": "300 ml"
+                },
+                {
+                    "nombre": "Naranja",
+                    "cantidad": "2 pieles"
+                },
+                {
+                    "nombre": "Limon",
+                    "cantidad": "2 pieles"
+                }
+            ]
+        },
+        {
+            "paso": "Vino",
+            "objetivo": "Añadir vino blanco y tinto",
+            "instruccion": "Añadir vino y despues remover",
+            "tiempo_min": "1",
+            "granos": [
+                {
+                    "nombre": "Vino blanco",
+                    "cantidad": "1,5 l"
+                },
+                {
+                    "nombre": "Vino tinto",
+                    "cantidad": "0,75 l"
+                }
+            ]
+        }
+    ]
+}
