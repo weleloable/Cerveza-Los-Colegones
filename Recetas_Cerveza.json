@@ -197,7 +197,7 @@
             "paso": "Notas herbales",
             "objetivo": "Dar notas herbales",
             "instruccion": "Añadir las hierbas para aromatizar. Un vez realizado, remover durante 30 segundos.",
-            "tiempo_min": "0.5",
+            "tiempo_min": "1",
             "granos": [
                 {
                     "nombre": "Ajenjo",
@@ -217,7 +217,7 @@
             "paso": "Notas florales",
             "objetivo": "Añadir notas florales y remover",
             "instruccion": "Añadir hierbas y remover durante 30 segundos",
-            "tiempo_min": "0.5",
+            "tiempo_min": "1",
             "granos": [
                 {
                     "nombre": "Menta",
@@ -237,7 +237,7 @@
             "paso": "Notas de olor",
             "objetivo": "Añadir notas de olor y remover",
             "instruccion": "Añadir hierbas y remover durante 30 segundos",
-            "tiempo_min": "0.5",
+            "tiempo_min": "1",
             "granos": [
                 {
                     "nombre": "Cardamomo (machacado)",
@@ -265,7 +265,7 @@
             "paso": "Alcoholazo 2",
             "objetivo": "300ml de alcoholazo y pieles de fruta",
             "instruccion": "Vodka, ginebra o alcoholazo puro",
-            "tiempo_min": "0.5",
+            "tiempo_min": "1",
             "granos": [
                 {
                     "nombre": "Alcoholazo",
@@ -285,7 +285,7 @@
             "paso": "Vino",
             "objetivo": "Añadir vino blanco y tinto",
             "instruccion": "Añadir vino y despues remover",
-            "tiempo_min": "0.5",
+            "tiempo_min": "1",
             "granos": [
                 {
                     "nombre": "Vino blanco",
