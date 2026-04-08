@@ -183,19 +183,117 @@
     ],
     "Vermú": [
         {
-            "paso": "Inicio",
-            "objetivo": "213123",
-            "instruccion": "...12321",
-            "tiempo_min": "3"
-        },
-        {
-            "paso": "Nuevo",
-            "objetivo": "23142",
-            "instruccion": "12432523",
+            "paso": "Alcoholazo",
+            "objetivo": "300 ml Alcoholazo",
+            "instruccion": "300ml de ginebra, vodka o alcohol puro 96º",
             "granos": [
                 {
-                    "nombre": "123",
-                    "cantidad": "5432"
+                    "nombre": "Alcoholazo",
+                    "cantidad": "300 ml"
+                }
+            ]
+        },
+        {
+            "paso": "Notas herbales",
+            "objetivo": "Dar notas herbales",
+            "instruccion": "Añadir las hierbas para aromatizar. Un vez realizado, remover durante 30 segundos.",
+            "tiempo_min": "0,5",
+            "granos": [
+                {
+                    "nombre": "Ajenjo",
+                    "cantidad": "3 g"
+                },
+                {
+                    "nombre": "Manzanilla",
+                    "cantidad": "1 g"
+                },
+                {
+                    "nombre": "Flor de Sauco",
+                    "cantidad": "1 g"
+                }
+            ]
+        },
+        {
+            "paso": "Notas florales",
+            "objetivo": "Añadir notas florales y remover",
+            "instruccion": "Añadir hierbas y remover durante 30 segundos",
+            "tiempo_min": "0,5",
+            "granos": [
+                {
+                    "nombre": "Menta",
+                    "cantidad": "1 g"
+                },
+                {
+                    "nombre": "Oregano",
+                    "cantidad": "2 g"
+                },
+                {
+                    "nombre": "Raiz de Genciana",
+                    "cantidad": "1 g"
+                }
+            ]
+        },
+        {
+            "paso": "Notas de olor",
+            "objetivo": "Añadir notas de olor y remover",
+            "instruccion": "Añadir hierbas y remover durante 30 segundos",
+            "tiempo_min": "0,5",
+            "granos": [
+                {
+                    "nombre": "Cardamomo (machacado)",
+                    "cantidad": "1 g"
+                },
+                {
+                    "nombre": "Enebro (machacado)",
+                    "cantidad": "1 g"
+                },
+                {
+                    "nombre": "Canela",
+                    "cantidad": "1 rama"
+                },
+                {
+                    "nombre": "Clavo",
+                    "cantidad": "4 clavos"
+                },
+                {
+                    "nombre": "Nuez moscada (rallada)",
+                    "cantidad": "media"
+                }
+            ]
+        },
+        {
+            "paso": "Alcoholazo 2",
+            "objetivo": "300ml de alcoholazo y pieles de fruta",
+            "instruccion": "Vodka, ginebra o alcoholazo puro",
+            "tiempo_min": "0,5",
+            "granos": [
+                {
+                    "nombre": "Alcoholazo",
+                    "cantidad": "300 ml"
+                },
+                {
+                    "nombre": "Naranja",
+                    "cantidad": "2 pieles"
+                },
+                {
+                    "nombre": "Limon",
+                    "cantidad": "2 pieles"
+                }
+            ]
+        },
+        {
+            "paso": "Vino",
+            "objetivo": "Añadir vino blanco y tinto",
+            "instruccion": "Añadir vino y despues remover",
+            "tiempo_min": "0,5",
+            "granos": [
+                {
+                    "nombre": "Vino blanco",
+                    "cantidad": "1,5 l"
+                },
+                {
+                    "nombre": "Vino tinto",
+                    "cantidad": "0,75 l"
                 }
             ]
         }
