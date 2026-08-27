@@ -16,11 +16,27 @@ st_autorefresh(interval=1000, key="datarefresh")
 
 NOMBRE_ARCHIVO = "Recetas_Cerveza.json"
 
-def aplicar_estilo_fondo():
-    color = "rgba(255, 0, 0, 0.7)" if st.session_state.get('alerta_disparada', False) else "white"
+def aplicar_estilo_movil():
+    """CSS global: alerta pulsante + interfaz más cómoda para pantallas táctiles."""
+    en_alerta = st.session_state.get('alerta_disparada', False)
+    color_base = "#fff5f5" if not en_alerta else "#ff4b4b"
     st.markdown(f"""
         <style>
-        .stApp {{ background-color: {color} !important; transition: background-color 0.5s ease; }}
+        .stApp {{
+            background-color: {color_base if not en_alerta else 'white'} !important;
+            {"animation: parpadeo 1s ease-in-out infinite;" if en_alerta else ""}
+        }}
+        @keyframes parpadeo {{
+            0%, 100% {{ background-color: white; }}
+            50% {{ background-color: rgba(255, 0, 0, 0.75); }}
+        }}
+        /* Botones y checkboxes más grandes para dedos, no ratón */
+        .stButton > button {{
+            min-height: 3em;
+            font-size: 1.1em;
+        }}
+        [data-testid="stCheckbox"] label p {{ font-size: 1.15em; }}
+        [data-testid="stMetricValue"] {{ font-size: 2.2em; }}
         </style>
     """, unsafe_allow_html=True)
 
@@ -29,9 +45,10 @@ def reproducir_sonido():
         with open("Heartsteel_trigger_SFX_2.ogg", "rb") as f:
             audio_base64 = base64.b64encode(f.read()).decode()
             st.components.v1.html(f"""
-                <audio autoplay><source src="data:audio/ogg;base64,{audio_base64}" type="audio/ogg"></audio>
+                <audio autoplay playsinline>
+                    <source src="data:audio/ogg;base64,{audio_base64}" type="audio/ogg">
+                </audio>
             """, height=0)
-            time.sleep(3)
     except FileNotFoundError:
         st.error("Archivo de sonido no encontrado")
 
@@ -73,28 +90,44 @@ def reset_paso(nuevo_paso):
     st.session_state.pausado = False
     st.rerun()
 
-with st.sidebar:
-    st.header("⚙️ Configuración")
-    receta_activa = st.selectbox("Selecciona tu receta:", list(st.session_state.mis_recetas.keys()))
-    if st.button("🔄 Reiniciar Proceso"):
+# ==========================================
+# 4. INTERFAZ PRINCIPAL
+# ==========================================
+aplicar_estilo_movil()
+
+st.title("🍺 Cerveza: LOS COLEGONES")
+
+# Selector de receta arriba del todo: en móvil el sidebar queda oculto tras
+# una flecha poco visible, así que la configuración clave vive en la página.
+col_receta, col_reset = st.columns([3, 1])
+with col_receta:
+    receta_activa = st.selectbox("Receta:", list(st.session_state.mis_recetas.keys()), label_visibility="collapsed")
+with col_reset:
+    if st.button("🔄 Reiniciar", use_container_width=True):
         reset_paso(0)
+
+# Si el usuario cambia de receta, el paso guardado puede no existir en la
+# nueva (p.ej. venía del paso 5 de una receta de 3 pasos) -> reiniciamos.
+if st.session_state.get('receta_previa') != receta_activa:
+    st.session_state.receta_previa = receta_activa
+    reset_paso(0)
 
 # Obtener datos del paso actual
 pasos = st.session_state.mis_recetas[receta_activa]
 datos_paso = pasos[st.session_state.paso_actual]
-
-# ==========================================
-# 4. INTERFAZ PRINCIPAL
-# ==========================================
-aplicar_estilo_fondo()
-
-st.title("🍺 Cerveza: LOS COLEGONES")
 st.progress((st.session_state.paso_actual + 1) / len(pasos))
 st.subheader(f"Paso {st.session_state.paso_actual + 1}: {datos_paso['paso']}")
 
 c1, c2 = st.columns([1, 2])
 c1.metric("Objetivo", datos_paso['objetivo'])
 c2.warning(f"👉 **Instrucción:** {datos_paso['instruccion']}")
+
+# Muchos móviles bloquean el autoplay de audio: si hay alerta activa, dejamos
+# un botón a mano para forzar la reproducción manualmente.
+if st.session_state.alerta_disparada:
+    st.error("🚨 ¡ATENCIÓN REQUERIDA!")
+    if st.button("🔊 Repetir sonido", use_container_width=True):
+        reproducir_sonido()
 
 paso_listo = False
 
