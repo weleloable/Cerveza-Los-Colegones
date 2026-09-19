@@ -25,7 +25,7 @@ Sin token, el editor sigue editando el archivo local como siempre.
 ## 3. Poner el token (Advanced settings > Secrets)
 
 ```toml
-GITHUB_TOKEN = "github_pat_xxxxxxxx"
+GITHUB_TOKEN = "<pega aquí el token del paso 1>"
 ```
 
 Opcionales, con estos valores por defecto: `GITHUB_REPO = "weleloable/Cerveza-Los-Colegones"`, `GITHUB_RAMA = "main"`.

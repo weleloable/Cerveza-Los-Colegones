@@ -14,7 +14,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from almacen_recetas import AlmacenGitHub, ConflictoGitHub, crear_almacen_github  # noqa: E402
 
-TOKEN = "ghp_TOKEN_SECRETO_DE_PRUEBA"
+TOKEN = "token-falso-solo-para-tests"
 RUTA = "/repos/yo/repo/contents/Recetas_Cerveza.json"
 
 
