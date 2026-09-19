@@ -1,10 +1,14 @@
 import streamlit as st
 import json
 import os
+import sys
 import copy
 import shutil
 import uuid
 from datetime import datetime
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from almacen_recetas import ConflictoGitHub, crear_almacen_github
 
 st.set_page_config(page_title="Editor Maestro - Los Colegones", page_icon="📝", layout="wide")
 
@@ -14,8 +18,19 @@ password = st.text_input("Contraseña de Maestro Cervecero", type="password")
 if password != "colegones":
     st.stop()
 
+# Con GITHUB_TOKEN en los secretos (Streamlit Cloud) cada guardado es un commit
+# en GitHub; sin token se edita el archivo local como siempre.
+ALMACEN_GITHUB = crear_almacen_github(st.secrets)
+
 # --- FUNCIONES DE PERSISTENCIA ---
 def cargar_todo():
+    if ALMACEN_GITHUB:
+        try:
+            recetas, st.session_state.sha_github = ALMACEN_GITHUB.cargar()
+            return recetas
+        except Exception as e:
+            st.error(f"No pude cargar las recetas de GitHub: {e}")
+            st.stop()
     if os.path.exists(NOMBRE_ARCHIVO):
         with open(NOMBRE_ARCHIVO, "r", encoding="utf-8") as f:
             try:
@@ -25,6 +40,16 @@ def cargar_todo():
     return {}
 
 def guardar_todo(diccionario):
+    if ALMACEN_GITHUB:
+        try:
+            st.session_state.sha_github = ALMACEN_GITHUB.guardar(diccionario, st.session_state.sha_github)
+        except ConflictoGitHub:
+            st.error("Otra persona guardó antes que tú. Pulsa «Recargar desde Archivo» en el menú lateral (se pierde tu último cambio) y repítelo.")
+            st.stop()
+        except Exception as e:
+            st.error(f"No se pudo guardar en GitHub: {e}")
+            st.stop()
+        return
     # Backup con timestamp antes de sobrescribir, por si algo sale mal.
     if os.path.exists(NOMBRE_ARCHIVO):
         base = os.path.splitext(NOMBRE_ARCHIVO)[0]
@@ -46,6 +71,7 @@ with st.sidebar:
     menu = ["Editar Receta", "Duplicar Receta", "Crear desde Cero", "Borrar Receta"]
     opcion = st.radio("Selecciona una acción:", menu)
     st.divider()
+    st.caption("Guardando en GitHub (cada cambio es un commit)" if ALMACEN_GITHUB else "Guardando en el archivo local")
     if st.button("🔄 Recargar desde Archivo"):
         st.session_state.db = cargar_todo()
         st.rerun()
@@ -218,7 +244,7 @@ elif opcion == "Editar Receta":
 
                 receta_data[idx] = nuevo_paso
                 guardar_todo(st.session_state.db)
-                st.success("✅ Paso guardado en disco (con backup automático).")
+                st.success("✅ Paso guardado en GitHub." if ALMACEN_GITHUB else "✅ Paso guardado en disco (con backup automático).")
 
 # --- CREAR DESDE CERO ---
 elif opcion == "Crear desde Cero":
